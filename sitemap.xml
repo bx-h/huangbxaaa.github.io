@@ -3,11 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://huangbxaaa.github.io/categories/</loc>
+    <loc>https://huangbxaaa.github.io/</loc>
+    <lastmod>2020-05-20T00:29:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://huangbxaaa.github.io/</loc>
+    <loc>https://huangbxaaa.github.io/posts/hello-world/</loc>
+    <lastmod>2020-05-20T00:29:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangbxaaa.github.io/posts/</loc>
+    <lastmod>2020-05-20T00:29:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangbxaaa.github.io/categories/</loc>
   </url>
   
   <url>
