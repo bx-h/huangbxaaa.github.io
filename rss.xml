@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Wed, 20 May 2020 02:34:15 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 20 May 2020 02:37:06 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://huangbxaaa.github.io/rss.xml" />
         
@@ -483,6 +483,28 @@
                 
                 
                 
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://huangbxaaa.github.io/categories/java/">Java</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://huangbxaaa.github.io/tags/%E6%9C%AC%E7%A7%91/">本科</category>
+                                
+                            
+                        
+                    
+                
             </item>
         
             <item>
@@ -515,6 +537,34 @@
                 
                 
                 
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://huangbxaaa.github.io/categories/%E6%9D%82%E7%BA%AA/">杂纪</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://huangbxaaa.github.io/tags/%E6%9C%AC%E7%A7%91/">本科</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://huangbxaaa.github.io/tags/test/">test</category>
+                                
+                            
+                        
+                    
                 
             </item>
         
