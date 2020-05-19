@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Wed, 20 May 2020 00:33:19 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 20 May 2020 00:51:10 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://huangbxaaa.github.io/rss.xml" />
         
         
             <item>
-                <title>Hello World 2</title>
+                <title>配置个人网页</title>
                 <link>https://huangbxaaa.github.io/posts/hello-world/</link>
                 <guid isPermaLink="true">https://huangbxaaa.github.io/posts/hello-world/</guid>
                 <pubDate>Tue, 19 May 2020 21:53:07 &#43;0800</pubDate>
@@ -38,7 +38,23 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
-                    <description></description>
+                    <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&#34;建立个人博客&#34;&gt;建立个人博客&lt;/h1&gt;
+&lt;p&gt;这是我的第一篇文章，记录一下使用&lt;code&gt;hugo&lt;/code&gt;开设个人博客过程中参考的资料和遇到的问题。&lt;/p&gt;
+&lt;h2 id=&#34;流程&#34;&gt;流程&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;官方教程&lt;/a&gt;：这个教程将博客内容与&lt;code&gt;hugo&lt;/code&gt;渲染内容全部部署到&lt;code&gt;github&lt;/code&gt;上，分别放置于两个不同的仓库，通过&lt;code&gt;submodule&lt;/code&gt;来实现关联，十分的有效。而且教程还提供了自动生成静态文件并上传&lt;code&gt;github&lt;/code&gt;的&lt;code&gt;shell&lt;/code&gt;脚本文件。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_43269020/article/details/82865542&#34;&gt;中文教程&lt;/a&gt; ：这个大概看了一下，没仔细阅读。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/theme/hugo-theme-meme/&#34;&gt;主题meme&lt;/a&gt;：这是我挑选的喜欢的主题。&lt;/p&gt;
+&lt;h2 id=&#34;遇到的问题&#34;&gt;遇到的问题&lt;/h2&gt;
+&lt;h3 id=&#34;css文件被加密chrome无法读取&#34;&gt;css文件被加密，Chrome无法读取&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/reuixiy/hugo-theme-meme/issues/166&#34;&gt;我在原主题下开了个issue，不过自己后面解决了就关了&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;本地渲染的blog在gitpage不显示&#34;&gt;本地渲染的blog在gitpage不显示&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/51974423/hugo-posts-not-displaying/51992360#51992360&#34;&gt;stackoverflow&lt;/a&gt;：查阅资料发现，要想执行&lt;code&gt;hugo&lt;/code&gt;之后能够看到自己在&lt;code&gt;hugo server -D&lt;/code&gt;时显示正常的blog，必须把blog头部的&lt;code&gt;draft:true&lt;/code&gt; 改为&lt;code&gt;draft:false&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;在官方文档中&lt;/a&gt;：末尾也有提到，不过没有仔细看，忽略了&lt;/p&gt;
+&lt;h2 id=&#34;最后&#34;&gt;最后&lt;/h2&gt;
+&lt;p&gt;坚持写博客呀！！！&lt;/p&gt;
+&lt;p&gt;faith，love，confidence！！！&lt;/p&gt;
+</description>
                 
                 
                 
