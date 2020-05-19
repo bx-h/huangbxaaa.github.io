@@ -2,15 +2,15 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title type="text">Hugo Theme MemE</title>
+    <title type="text">hbx blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-05-19T22:22:14&#43;08:00</updated>
-    <id>https://example.com/</id>
-    <link rel="alternate" type="text/html" href="https://example.com/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://example.com/atom.xml" />
+    <updated>2020-05-19T22:40:08&#43;08:00</updated>
+    <id>https://huangbxaaa.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://huangbxaaa.github.io/atom.xml" />
     <author>
             <name>huangbx</name>
-            <uri>https://example.com/</uri>
+            <uri>https://huangbxaaa.github.io/</uri>
             
                 <email>huangbx666@gmail.com</email>
             </author>
