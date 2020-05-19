@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>hbx blog</title>
-        <link>https://github.com/huangbxaaa/blog/tree/master/content/</link>
+        <link>https://huangbxaaa.github.io/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.70.0 https://gohugo.io/</generator>
         
@@ -23,9 +23,9 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Wed, 20 May 2020 00:20:58 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 20 May 2020 00:22:55 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://github.com/huangbxaaa/blog/tree/master/content/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://huangbxaaa.github.io/rss.xml" />
         
         
     </channel>
