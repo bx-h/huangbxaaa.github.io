@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">hbx blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-06-08T21:15:18&#43;08:00</updated>
+    <updated>2020-06-12T13:57:41&#43;08:00</updated>
     <id>https://huangbxaaa.github.io/</id>
     <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://huangbxaaa.github.io/atom.xml" />
@@ -20,18 +20,19 @@
             <title type="text">JavaNote_6</title>
             <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/posts/javanote_6/" />
             <id>https://huangbxaaa.github.io/posts/javanote_6/</id>
-            <updated>2020-06-08T20:59:29&#43;08:00</updated>
+            <updated>2020-06-12T13:51:02&#43;08:00</updated>
             <published>2020-06-08T20:58:17&#43;08:00</published>
             <author>
                     <name>huangbx</name>
                     <uri>https://huangbxaaa.github.io/</uri>
                     <email>huangbx666@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">其他语法补充 foreach 1 2 3 for(int data : arr) { System.out.println(data); } 集合遍历的方式（总结：针对有下标的集合，指list...
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;摘要：优化for循环；IO流；&lt;/p&gt;...
     
     </summary>
             
-                <content type="html">&lt;h2 id=&#34;其他语法补充&#34;&gt;其他语法补充&lt;/h2&gt;
+                <content type="html">&lt;p&gt;摘要：优化for循环；IO流；&lt;/p&gt;
+&lt;h2 id=&#34;其他语法补充&#34;&gt;其他语法补充&lt;/h2&gt;
 &lt;h3 id=&#34;foreach&#34;&gt;foreach&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -475,8 +476,7 @@
 &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;long skip(long n)&lt;/code&gt;：跳过几个字节不读。&lt;/p&gt;
-</content>
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;long skip(long n)&lt;/code&gt;：跳过几个字节不读。&lt;/p&gt;</content>
             
             
             
@@ -510,18 +510,19 @@
             <title type="text">JavaNote_5</title>
             <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/posts/javanote_5/" />
             <id>https://huangbxaaa.github.io/posts/javanote_5/</id>
-            <updated>2020-06-08T20:59:56&#43;08:00</updated>
+            <updated>2020-06-12T13:52:18&#43;08:00</updated>
             <published>2020-06-08T20:48:21&#43;08:00</published>
             <author>
                     <name>huangbx</name>
                     <uri>https://huangbxaaa.github.io/</uri>
                     <email>huangbx666@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Map Map集合和Collection集合没有关系。Map以键值对的方式存储元素。key...
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;摘要：Map；泛型；&lt;/p&gt;...
     
     </summary>
             
-                <content type="html">&lt;h2 id=&#34;map&#34;&gt;Map&lt;/h2&gt;
+                <content type="html">&lt;p&gt;摘要：Map；泛型；&lt;/p&gt;
+&lt;h2 id=&#34;map&#34;&gt;Map&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;/picture/JavaNote_5-ScreenClip-2.png&#34; alt=&#34;ScreenClip [2]&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Map集合和Collection集合没有关系。Map以键值对的方式存储元素。key和value都是存储java对象的内存地址（引用），存储元素特点相同。&lt;/li&gt;
@@ -989,18 +990,19 @@
             <title type="text">JavaNote_4</title>
             <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/posts/javanote_4/" />
             <id>https://huangbxaaa.github.io/posts/javanote_4/</id>
-            <updated>2020-06-08T21:00:07&#43;08:00</updated>
+            <updated>2020-06-12T13:53:33&#43;08:00</updated>
             <published>2020-06-08T20:24:04&#43;08:00</published>
             <author>
                     <name>huangbx</name>
                     <uri>https://huangbxaaa.github.io/</uri>
                     <email>huangbx666@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Date [Java.util] 构造方法 1 2 3 import java.util; Date nowTime = new Date(); //获取系统当前时间 SimpleDateFormat [java.text] 自定义格式的日期，可以将Da...
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;摘要：Date；数字类；枚举；异常与错误；集合&lt;/p&gt;...
     
     </summary>
             
-                <content type="html">&lt;h2 id=&#34;date-javautil&#34;&gt;Date [Java.util]&lt;/h2&gt;
+                <content type="html">&lt;p&gt;摘要：Date；数字类；枚举；异常与错误；集合&lt;/p&gt;
+&lt;h2 id=&#34;date-javautil&#34;&gt;Date [Java.util]&lt;/h2&gt;
 &lt;p&gt;构造方法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1982,18 +1984,19 @@
             <title type="text">JavaNote_3</title>
             <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/posts/javanote_3/" />
             <id>https://huangbxaaa.github.io/posts/javanote_3/</id>
-            <updated>2020-06-08T15:35:24&#43;08:00</updated>
+            <updated>2020-06-12T13:54:38&#43;08:00</updated>
             <published>2020-06-02T17:02:35&#43;08:00</published>
             <author>
                     <name>huangbx</name>
                     <uri>https://huangbxaaa.github.io/</uri>
                     <email>huangbx666@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">String 字符串属于引用数据类型。 使用双引号括起来的都是String对象。 String对象一...
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;摘要：String; StringBuffer; StringBuilder; 包装类&lt;/p&gt;...
     
     </summary>
             
-                <content type="html">&lt;h2 id=&#34;string&#34;&gt;String&lt;/h2&gt;
+                <content type="html">&lt;p&gt;摘要：String; StringBuffer; StringBuilder; 包装类&lt;/p&gt;
+&lt;h2 id=&#34;string&#34;&gt;String&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;字符串属于引用数据类型。&lt;/li&gt;
 &lt;li&gt;使用双引号括起来的都是String对象。&lt;/li&gt;
@@ -2349,8 +2352,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;总结：String，int，Integer互转&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/picture/JavaNote_3-20200517101240955.png&#34; alt=&#34;image-20200517101240955&#34;&gt;&lt;/p&gt;
-&lt;div style=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
-</content>
+&lt;div style=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;</content>
             
             
             
@@ -2384,18 +2386,19 @@
             <title type="text">JavaNote_2</title>
             <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/posts/javanote_2/" />
             <id>https://huangbxaaa.github.io/posts/javanote_2/</id>
-            <updated>2020-06-08T15:35:24&#43;08:00</updated>
+            <updated>2020-06-12T13:55:15&#43;08:00</updated>
             <published>2020-06-02T16:51:14&#43;08:00</published>
             <author>
                     <name>huangbx</name>
                     <uri>https://huangbxaaa.github.io/</uri>
                     <email>huangbx666@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Object toString() 默认输出是：类名@地址，建议重写该方法。println引用时，会自动调用该方法。...
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;摘要：Object; 数组;&lt;/p&gt;...
     
     </summary>
             
-                <content type="html">&lt;h2 id=&#34;object&#34;&gt;Object&lt;/h2&gt;
+                <content type="html">&lt;p&gt;摘要：Object; 数组;&lt;/p&gt;
+&lt;h2 id=&#34;object&#34;&gt;Object&lt;/h2&gt;
 &lt;h3 id=&#34;tostring&#34;&gt;toString()&lt;/h3&gt;
 &lt;p&gt;默认输出是：类名@地址，建议重写该方法。println引用时，会自动调用该方法。&lt;/p&gt;
 &lt;h3 id=&#34;equals&#34;&gt;equals()&lt;/h3&gt;
@@ -2736,8 +2739,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;数组算法&#34;&gt;数组算法&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;java.util.Arrays&lt;/code&gt;是一个工具类，里面有sort()方法，可以排序。&lt;/p&gt;
-&lt;div style=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
-</content>
+&lt;div style=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;</content>
             
             
             
@@ -2771,18 +2773,19 @@
             <title type="text">JavaNote_1</title>
             <link rel="alternate" type="text/html" href="https://huangbxaaa.github.io/posts/javanote_1/" />
             <id>https://huangbxaaa.github.io/posts/javanote_1/</id>
-            <updated>2020-06-08T15:35:24&#43;08:00</updated>
+            <updated>2020-06-12T13:56:33&#43;08:00</updated>
             <published>2020-05-20T01:31:31&#43;08:00</published>
             <author>
                     <name>huangbx</name>
                     <uri>https://huangbxaaa.github.io/</uri>
                     <email>huangbx666@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">类和对象 一些规则 在Java中任何有效的代码必须写到“类”中，最外层必须是一个类的定义...
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;&lt;/p&gt;...
     
     </summary>
             
-                <content type="html">&lt;h2 id=&#34;类和对象&#34;&gt;类和对象&lt;/h2&gt;
+                <content type="html">&lt;p&gt;摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;&lt;/p&gt;
+&lt;h2 id=&#34;类和对象&#34;&gt;类和对象&lt;/h2&gt;
 &lt;h3 id=&#34;一些规则&#34;&gt;一些规则&lt;/h3&gt;
 &lt;p&gt;在Java中任何有效的代码必须写到“类”中，最外层必须是一个类的定义。类体中应该是方法或者变量，不能是直接的Java语句。&lt;/p&gt;
 &lt;p&gt;一个Java源文件中可以定义多个class.&lt;/p&gt;
