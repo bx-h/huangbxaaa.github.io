@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 15 Jun 2020 16:51:07 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 16 Jun 2020 11:10:57 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://huangbxaaa.github.io/rss.xml" />
         
@@ -704,7 +704,6 @@
 &lt;li&gt;数组和单向链表的结合体&lt;/li&gt;
 &lt;li&gt;结合了数组查询效率高与链表增删效率高的优点&lt;/li&gt;
 &lt;li&gt;类似珠珠门帘&lt;/li&gt;
-&lt;li&gt;hash值相同，一定在同一个单向链表上。但同一个单向链表上可能有hash值不同的对象（哈希碰撞）。但链表上的&lt;code&gt;Node&lt;/code&gt;的&lt;code&gt;key&lt;/code&gt;值都不相等。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -772,9 +771,16 @@
 &lt;/ol&gt;
 &lt;p&gt;更新：JDK8之后，当某数组位置的链表长度大于8时，链表变为红黑树。当红黑树的节点数量小于6时，重新变为单向链表。&lt;/p&gt;
 &lt;p&gt;hashMap的key允许为空，但只能存在一个。即：null值作为key和普通值一样。&lt;/p&gt;
+&lt;p&gt;为什么要同时重写&lt;code&gt;hashCode&lt;/code&gt;和&lt;code&gt;equals&lt;/code&gt;方法？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果两个对象相等，则 &lt;code&gt;hashcode&lt;/code&gt;一定也是相同的。两个对象有相同的&lt;code&gt;hashcode&lt;/code&gt;值，它们不一定是相等的。（哈希碰撞）。&lt;/li&gt;
+&lt;li&gt;两个对象相等,对两个对象分别调用 &lt;code&gt;equals&lt;/code&gt; 方法都返回 true。因此，对于两个&lt;code&gt;equals&lt;/code&gt;的对象，&lt;code&gt;hashCode&lt;/code&gt;也必须相同。&lt;/li&gt;
+&lt;li&gt;两个方法需要同时重写。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写 hashCode()，则该 class 的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;hashcode方法与equals方法的重写&#34;&gt;hashCode方法与equals方法的重写&lt;/h3&gt;
-&lt;p&gt;一个类的&lt;code&gt;equals()&lt;/code&gt;方法和&lt;code&gt;hashCode()&lt;/code&gt;方法必须同时重写，并且&lt;code&gt;equals()&lt;/code&gt;方法返回&lt;code&gt;true&lt;/code&gt;时，&lt;code&gt;hashCode()&lt;/code&gt;方法必须返回相同的值。&lt;/p&gt;
-&lt;p&gt;因为，值相等的两个元素一定在同一个哈希链上。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
