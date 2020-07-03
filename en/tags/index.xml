@@ -1,42 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Tags on Hugo Zzo Theme</title>
     <link>http://huangbxaaa.github.io/en/tags/</link>
     <description>Recent content in Tags on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>hbx1998@outlook.com (hbx)</managingEditor>
+    <webMaster>hbx1998@outlook.com (hbx)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
     <lastBuildDate>Wed, 20 May 2020 02:12:54 +0800</lastBuildDate>
     
-	<atom:link href="http://huangbxaaa.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://huangbxaaa.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>编程语言</title>
-      <link>http://huangbxaaa.github.io/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Mon, 08 Jun 2020 20:58:17 +0800</pubDate>
+    
+
       
-      <guid>http://huangbxaaa.github.io/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>http://huangbxaaa.github.io/en/tags/test/</link>
-      <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+      <item>
+        <title>编程语言</title>
+        <link>http://huangbxaaa.github.io/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+        <pubDate>Mon, 08 Jun 2020 20:58:17 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        
+        <guid>http://huangbxaaa.github.io/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+        <description></description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>http://huangbxaaa.github.io/en/tags/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>本科</title>
-      <link>http://huangbxaaa.github.io/en/tags/%E6%9C%AC%E7%A7%91/</link>
-      <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+      <item>
+        <title>test</title>
+        <link>http://huangbxaaa.github.io/en/tags/test/</link>
+        <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        
+        <guid>http://huangbxaaa.github.io/en/tags/test/</guid>
+        <description></description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>http://huangbxaaa.github.io/en/tags/%E6%9C%AC%E7%A7%91/</guid>
-      <description></description>
-    </item>
+      <item>
+        <title>本科</title>
+        <link>http://huangbxaaa.github.io/en/tags/%E6%9C%AC%E7%A7%91/</link>
+        <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        
+        <guid>http://huangbxaaa.github.io/en/tags/%E6%9C%AC%E7%A7%91/</guid>
+        <description></description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

@@ -1,15 +1,14 @@
 {
-  "name": "Hugo Zzo Theme",
-  "short_name": "Hugo Zzo Theme",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "icons": [
-    {
-      "src": "/favicon.svg",
-      "sizes": "512x512"
-    }
-  ]
+    "name": "",
+    "short_name": "",
+    "icons": [
+        {
+            "src": "icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
 }

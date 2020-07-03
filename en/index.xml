@@ -1,87 +1,263 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Hugo Zzo Theme</title>
     <link>http://huangbxaaa.github.io/en/</link>
     <description>Recent content on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>hbx1998@outlook.com (hbx)</managingEditor>
+    <webMaster>hbx1998@outlook.com (hbx)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
     <lastBuildDate>Mon, 08 Jun 2020 20:58:17 +0800</lastBuildDate>
     
-	<atom:link href="http://huangbxaaa.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://huangbxaaa.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>JavaNote_6</title>
-      <link>http://huangbxaaa.github.io/en/posts/javanote_6/</link>
-      <pubDate>Mon, 08 Jun 2020 20:58:17 +0800</pubDate>
+    
       
-      <guid>http://huangbxaaa.github.io/en/posts/javanote_6/</guid>
-      <description>&lt;p&gt;摘要：优化for循环；IO流；&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JavaNote_5</title>
-      <link>http://huangbxaaa.github.io/en/posts/javanote_5/</link>
-      <pubDate>Mon, 08 Jun 2020 20:48:21 +0800</pubDate>
       
-      <guid>http://huangbxaaa.github.io/en/posts/javanote_5/</guid>
-      <description>&lt;p&gt;摘要：Map；泛型；&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JavaNote_4</title>
-      <link>http://huangbxaaa.github.io/en/posts/javanote_4/</link>
-      <pubDate>Mon, 08 Jun 2020 20:24:04 +0800</pubDate>
       
-      <guid>http://huangbxaaa.github.io/en/posts/javanote_4/</guid>
-      <description>&lt;p&gt;摘要：Date；数字类；枚举；异常与错误；集合&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JavaNote_3</title>
-      <link>http://huangbxaaa.github.io/en/posts/javanote_3/</link>
-      <pubDate>Tue, 02 Jun 2020 17:02:35 +0800</pubDate>
+        
       
-      <guid>http://huangbxaaa.github.io/en/posts/javanote_3/</guid>
-      <description>&lt;p&gt;摘要：String; StringBuffer; StringBuilder; 包装类&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JavaNote_2</title>
-      <link>http://huangbxaaa.github.io/en/posts/javanote_2/</link>
-      <pubDate>Tue, 02 Jun 2020 16:51:14 +0800</pubDate>
+        
       
-      <guid>http://huangbxaaa.github.io/en/posts/javanote_2/</guid>
-      <description>&lt;p&gt;摘要：Object; 数组;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JavaNote_1</title>
-      <link>http://huangbxaaa.github.io/en/posts/javanote_1/</link>
-      <pubDate>Wed, 20 May 2020 01:31:31 +0800</pubDate>
+        
       
-      <guid>http://huangbxaaa.github.io/en/posts/javanote_1/</guid>
-      <description>&lt;p&gt;摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>配置个人网页</title>
-      <link>http://huangbxaaa.github.io/en/posts/hello-world/</link>
-      <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+        
       
-      <guid>http://huangbxaaa.github.io/en/posts/hello-world/</guid>
-      <description>建立个人博客 # 这是我的第一篇文章，记录一下使用hugo开设个人博客过程中参考的资料和遇到的问题。 流程 # 官方教程：这个教程将博客内容与hugo</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>http://huangbxaaa.github.io/en/contact/</link>
-      <pubDate>Tue, 17 Dec 2019 23:58:33 +0900</pubDate>
+        
       
-      <guid>http://huangbxaaa.github.io/en/contact/</guid>
-      <description>This is contact page.</description>
-    </item>
+        
+      
+        
+      
+        
+      
+        
+      
+
+      
+      <item>
+        <title>JavaNote_6</title>
+        <link>http://huangbxaaa.github.io/en/posts/javanote_6/</link>
+        <pubDate>Mon, 08 Jun 2020 20:58:17 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Mon, 08 Jun 2020 20:58:17 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/javanote_6/</guid>
+        <description>&lt;p&gt;摘要：优化for循环；IO流；&lt;/p&gt;</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>编程语言</category>
+            
+          
+        
+        
+          
+            
+              <category>Java</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaNote_5</title>
+        <link>http://huangbxaaa.github.io/en/posts/javanote_5/</link>
+        <pubDate>Mon, 08 Jun 2020 20:48:21 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Mon, 08 Jun 2020 20:48:21 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/javanote_5/</guid>
+        <description>&lt;p&gt;摘要：Map；泛型；&lt;/p&gt;</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>编程语言</category>
+            
+          
+        
+        
+          
+            
+              <category>Java</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaNote_4</title>
+        <link>http://huangbxaaa.github.io/en/posts/javanote_4/</link>
+        <pubDate>Mon, 08 Jun 2020 20:24:04 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Mon, 08 Jun 2020 20:24:04 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/javanote_4/</guid>
+        <description>&lt;p&gt;摘要：Date；数字类；枚举；异常与错误；集合&lt;/p&gt;</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>编程语言</category>
+            
+          
+        
+        
+          
+            
+              <category>Java</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaNote_3</title>
+        <link>http://huangbxaaa.github.io/en/posts/javanote_3/</link>
+        <pubDate>Tue, 02 Jun 2020 17:02:35 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Tue, 02 Jun 2020 17:02:35 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/javanote_3/</guid>
+        <description>&lt;p&gt;摘要：String; StringBuffer; StringBuilder; 包装类&lt;/p&gt;</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>编程语言</category>
+            
+          
+        
+        
+          
+            
+              <category>Java</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaNote_2</title>
+        <link>http://huangbxaaa.github.io/en/posts/javanote_2/</link>
+        <pubDate>Tue, 02 Jun 2020 16:51:14 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Tue, 02 Jun 2020 16:51:14 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/javanote_2/</guid>
+        <description>&lt;p&gt;摘要：Object; 数组;&lt;/p&gt;</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>编程语言</category>
+            
+          
+        
+        
+          
+            
+              <category>Java</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaNote_1</title>
+        <link>http://huangbxaaa.github.io/en/posts/javanote_1/</link>
+        <pubDate>Wed, 20 May 2020 01:31:31 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Wed, 20 May 2020 01:31:31 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/javanote_1/</guid>
+        <description>&lt;p&gt;摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;&lt;/p&gt;</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>编程语言</category>
+            
+          
+        
+        
+          
+            
+              <category>Java</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>配置个人网页</title>
+        <link>http://huangbxaaa.github.io/en/posts/hello-world/</link>
+        <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+        <author>hbx1998@outlook.com (hbx)</author>
+        <atom:modified>Tue, 19 May 2020 21:53:07 +0800</atom:modified>
+        <guid>http://huangbxaaa.github.io/en/posts/hello-world/</guid>
+        <description>建立个人博客 这是我的第一篇文章，记录一下使用hugo开设个人博客过程中参考的资料和遇到的问题。 流程 官方教程：这个教程将博客内容与hugo渲染</description>
+        
+        <dc:creator>hbx</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>本科</category>
+            
+          
+            
+              <category>test</category>
+            
+          
+        
+        
+          
+            
+              <category>杂纪</category>
+            
+          
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>
