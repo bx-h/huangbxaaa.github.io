@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Categories on Hugo Zzo Theme</title>
-    <link>http://huangbxaaa.github.io/ko/categories/</link>
+    <link>https://huangbxaaa.github.io/ko/categories/</link>
     <description>Recent content in Categories on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
@@ -15,7 +15,7 @@
     <webMaster>hbx1998@outlook.com (hbx1998)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://huangbxaaa.github.io/ko/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://huangbxaaa.github.io/ko/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     

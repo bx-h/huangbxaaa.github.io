@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Hugo Zzo Theme</title>
-    <link>http://huangbxaaa.github.io/en/</link>
+    <link>https://huangbxaaa.github.io/en/</link>
     <description>Recent content on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -16,7 +16,7 @@
     <copyright>©{year}, All Rights Reserved</copyright>
     <lastBuildDate>Mon, 08 Jun 2020 20:58:17 +0800</lastBuildDate>
     
-        <atom:link href="http://huangbxaaa.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://huangbxaaa.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -45,11 +45,11 @@
       
       <item>
         <title>JavaNote_6</title>
-        <link>http://huangbxaaa.github.io/en/posts/javanote_6/</link>
+        <link>https://huangbxaaa.github.io/en/posts/javanote_6/</link>
         <pubDate>Mon, 08 Jun 2020 20:58:17 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Mon, 08 Jun 2020 20:58:17 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/javanote_6/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/javanote_6/</guid>
         <description>&lt;p&gt;摘要：优化for循环；IO流；&lt;/p&gt;</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -75,11 +75,11 @@
       
       <item>
         <title>JavaNote_5</title>
-        <link>http://huangbxaaa.github.io/en/posts/javanote_5/</link>
+        <link>https://huangbxaaa.github.io/en/posts/javanote_5/</link>
         <pubDate>Mon, 08 Jun 2020 20:48:21 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Mon, 08 Jun 2020 20:48:21 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/javanote_5/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/javanote_5/</guid>
         <description>&lt;p&gt;摘要：Map；泛型；&lt;/p&gt;</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -105,11 +105,11 @@
       
       <item>
         <title>JavaNote_4</title>
-        <link>http://huangbxaaa.github.io/en/posts/javanote_4/</link>
+        <link>https://huangbxaaa.github.io/en/posts/javanote_4/</link>
         <pubDate>Mon, 08 Jun 2020 20:24:04 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Mon, 08 Jun 2020 20:24:04 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/javanote_4/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/javanote_4/</guid>
         <description>&lt;p&gt;摘要：Date；数字类；枚举；异常与错误；集合&lt;/p&gt;</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -135,11 +135,11 @@
       
       <item>
         <title>JavaNote_3</title>
-        <link>http://huangbxaaa.github.io/en/posts/javanote_3/</link>
+        <link>https://huangbxaaa.github.io/en/posts/javanote_3/</link>
         <pubDate>Tue, 02 Jun 2020 17:02:35 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Tue, 02 Jun 2020 17:02:35 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/javanote_3/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/javanote_3/</guid>
         <description>&lt;p&gt;摘要：String; StringBuffer; StringBuilder; 包装类&lt;/p&gt;</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -165,11 +165,11 @@
       
       <item>
         <title>JavaNote_2</title>
-        <link>http://huangbxaaa.github.io/en/posts/javanote_2/</link>
+        <link>https://huangbxaaa.github.io/en/posts/javanote_2/</link>
         <pubDate>Tue, 02 Jun 2020 16:51:14 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Tue, 02 Jun 2020 16:51:14 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/javanote_2/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/javanote_2/</guid>
         <description>&lt;p&gt;摘要：Object; 数组;&lt;/p&gt;</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -195,11 +195,11 @@
       
       <item>
         <title>JavaNote_1</title>
-        <link>http://huangbxaaa.github.io/en/posts/javanote_1/</link>
+        <link>https://huangbxaaa.github.io/en/posts/javanote_1/</link>
         <pubDate>Wed, 20 May 2020 01:31:31 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Wed, 20 May 2020 01:31:31 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/javanote_1/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/javanote_1/</guid>
         <description>&lt;p&gt;摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;&lt;/p&gt;</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -225,11 +225,11 @@
       
       <item>
         <title>配置个人网页</title>
-        <link>http://huangbxaaa.github.io/en/posts/hello-world/</link>
+        <link>https://huangbxaaa.github.io/en/posts/hello-world/</link>
         <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         <atom:modified>Tue, 19 May 2020 21:53:07 +0800</atom:modified>
-        <guid>http://huangbxaaa.github.io/en/posts/hello-world/</guid>
+        <guid>https://huangbxaaa.github.io/en/posts/hello-world/</guid>
         <description>建立个人博客 这是我的第一篇文章，记录一下使用hugo开设个人博客过程中参考的资料和遇到的问题。 流程 官方教程：这个教程将博客内容与hugo渲染</description>
         
         <dc:creator>hbx1998</dc:creator>
@@ -259,11 +259,11 @@
       
       <item>
         <title></title>
-        <link>http://huangbxaaa.github.io/en/archive/</link>
+        <link>https://huangbxaaa.github.io/en/archive/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         <author>hbx1998@outlook.com (hbx1998)</author>
         
-        <guid>http://huangbxaaa.github.io/en/archive/</guid>
+        <guid>https://huangbxaaa.github.io/en/archive/</guid>
         <description>this is archive</description>
         
         <dc:creator>hbx1998</dc:creator>
