@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="摘要：Map；泛型；">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="JavaNote_5" />
+<meta property="og:description" content="摘要：Map；泛型；" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangbxaaa.github.io/en/posts/javanote_5/" />
+<meta property="article:published_time" content="2020-06-08T20:48:21+08:00" />
+<meta property="article:modified_time" content="2020-06-08T20:48:21+08:00" /><meta property="og:site_name" content="Hugo Zzo Theme" />
+<title>JavaNote_5 | Hugo Zzo Theme</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.aafa5705bd561f3da11b77b6d7941927d31d043ec4a7e111cb83b38b9c246074.js" integrity="sha256-qvpXBb1WHz2hG3e215QZJ9MdBD7Ep&#43;ERy4Ozi5wkYHQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/en"><span>Hugo Zzo Theme</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>JavaNote_5</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#map">Map</a>
+      <ul>
+        <li><a href="#官方文档一些方法的解释">官方文档一些方法的解释</a></li>
+        <li><a href="#遍历">遍历</a></li>
+        <li><a href="#hashmap">HashMap</a></li>
+        <li><a href="#hashcode方法与equals方法的重写">hashCode方法与equals方法的重写</a></li>
+        <li><a href="#hashtable">HashTable</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#treemap">TreeMap</a></li>
+      </ul>
+    </li>
+    <li><a href="#泛型">泛型</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/en/posts/javanote_5/">JavaNote_5</a>
+  </h1>
+  
+  <h5>June 8, 2020</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/en/categories/java/">Java</a>
+  </div>
+  
+
+  
+
+  
+  <div>
+    
+      <a href="/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </div>
+  
+
+
+  <p><p>摘要：Map；泛型；</p>
+<h2 id="map">
+  Map
+  <a class="anchor" href="#map">#</a>
+</h2>
+<p><img src="/picture/JavaNote_5-ScreenClip-2.png" alt="ScreenClip [2]" /></p>
+<ol>
+<li>Map集合和Collection集合没有关系。Map以键值对的方式存储元素。key和value都是存储java对象的内存地址（引用），存储元素特点相同。</li>
+<li>HashMap底层是哈希表，非线程安全；Hashtable底层也是哈希表，线程安全，效率较低，一般不用。</li>
+<li>SortedMap中会自动按照key自己大小排序。</li>
+<li>TreeMap底层是一个二叉树。Key可以自己按照大小排序。</li>
+<li>Properties是线程安全的，另外Properties存储的key和value都是String类型。</li>
+</ol>
+<h3 id="官方文档一些方法的解释">
+  官方文档一些方法的解释
+  <a class="anchor" href="#%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%e4%b8%80%e4%ba%9b%e6%96%b9%e6%b3%95%e7%9a%84%e8%a7%a3%e9%87%8a">#</a>
+</h3>
+<p><code>Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet()</code></p>
+<p>将Map集合转为Set集合。</p>
+<p>e.g.</p>
+<p>Map集合</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>zhangsan</td>
+</tr>
+<tr>
+<td>2</td>
+<td>lisi</td>
+</tr>
+</tbody>
+</table>
+<p>执行：<code>Set set = map1.entrySet();</code></p>
+<p>set集合</p>
+<table>
+<thead>
+<tr>
+<th>element , 类型为: <code>Map.Entry&lt;K, V&gt;</code>, 是Map中的一个静态内部类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1=zhangsan</td>
+</tr>
+<tr>
+<td>2=lisi</td>
+</tr>
+</tbody>
+</table>
+<p>静态内部类：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Myclass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Innerclass</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m1</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I am static function m1 in Innerclass&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+        
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">m2</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;我是Innerclass中的实例方法&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Myclass</span><span class="o">.</span><span class="na">Innerclass</span><span class="o">.</span><span class="na">m1</span><span class="o">();</span>
+        <span class="n">Myclass</span><span class="o">.</span><span class="na">Innerclass</span> <span class="n">mclass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Myclass</span><span class="o">.</span><span class="na">Innerclass</span><span class="o">();</span>
+        <span class="n">mclass</span><span class="o">.</span><span class="na">m2</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="遍历">
+  遍历
+  <a class="anchor" href="#%e9%81%8d%e5%8e%86">#</a>
+</h3>
+<p>方法1：将key转为set，遍历获得value</p>
+<p>方法2：将整个map转为set。元素变为：<code>Map.Entry&lt;&gt;</code>。效率更高。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MapTest</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="s">&#34;zhangsan&#34;</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="s">&#34;lisi&#34;</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">3</span><span class="o">,</span> <span class="s">&#34;wangwu&#34;</span><span class="o">);</span>
+        <span class="c1">// 方式1：获取所有的key，遍历key，来遍历value
+</span><span class="c1"></span>        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">();</span>
+        <span class="c1">// 遍历keys：迭代器或者foreach
+</span><span class="c1"></span>        <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">Integer</span> <span class="n">key</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&#34;=&#34;</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="cm">/*
+</span><span class="cm">        for(Integer key : keys) {
+</span><span class="cm">        	String value = map.get(key);
+</span><span class="cm">        	System.out.println(key + &#34;=&#34; + value);
+</span><span class="cm">        }
+</span><span class="cm">        */</span>
+        
+        <span class="c1">// 方式2：把map集合整个转换为set集合。效率更高。
+</span><span class="c1"></span>        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">m_set</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">();</span>
+        <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">m_set</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">it2</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">it2</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="n">Integer</span> <span class="n">key</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&#34;=&#34;</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/picture/JavaNote_5-MapToSet.PNG" style="zoom:75%;" /></p>
+<h3 id="hashmap">
+  HashMap
+  <a class="anchor" href="#hashmap">#</a>
+</h3>
+<p><img src="/picture/JavaNote_5-20200529132118338.png" alt="image-20200529132118338" style="zoom:80%;" /></p>
+<ol>
+<li>
+<p>底层为散列表、哈希表的数据结构</p>
+</li>
+<li>
+<p>什么是哈希表？</p>
+<ol>
+<li>数组和单向链表的结合体</li>
+<li>结合了数组查询效率高与链表增删效率高的优点</li>
+<li>类似珠珠门帘</li>
+</ol>
+</li>
+<li>
+<p>无序不可重复</p>
+</li>
+<li>
+<p>底层源代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HashMap</span> <span class="o">{</span>
+    <span class="c1">// 底层为一维数组
+</span><span class="c1"></span>    <span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;[]</span> <span class="n">table</span><span class="o">;</span>
+    <span class="c1">// 静态内部类HashMap.Node
+</span><span class="c1"></span>    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">hash</span><span class="o">;</span> <span class="c1">// key执行hashCode()的结果，hash通过哈希算法可以转为下标。
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">K</span> <span class="n">key</span><span class="o">;</span>
+        <span class="n">V</span> <span class="n">value</span><span class="o">;</span>
+        <span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="n">next</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>需要重写<code>equals()</code>和<code>hashCode()</code>方法。</p>
+</li>
+<li>
+<p>要设定恰当的<code>hashCode</code>方法。假如<code>hashCode</code>方法返回固定值，则变成链表。假如每个key都返回不同的<code>hash</code>，则变为数组。因此，要使<code>hashCode</code>方法返回的值散列分布均匀。</p>
+</li>
+<li>
+<p>HashMap集合的默认初始化容量为16，默认加载因子为0.75。即容量达到75%时，数组开始扩容，扩容后是原容量的2倍。初始容量推荐为2的倍数。</p>
+</li>
+</ol>
+<p>put方法</p>
+<ol>
+<li>先将key，value封装到Node对象中</li>
+<li>底层调用key的<code>hashCode()</code>方法得出hash值</li>
+<li>通过哈希算法，将hash值转为数组下标</li>
+<li>如果下标位置没有任何元素，直接把Node添加到该位置</li>
+<li>如果下标位置已经有元素，则将key与链表上的key一一使用<code>equals()</code>进行对比。如果全部返回false，则将Node添加到链尾；否则，使用Node的value值替换掉链表上对应Node的value值。</li>
+</ol>
+<p>get方法</p>
+<ol>
+<li>先调用key的<code>hashCode()</code>方法获得哈希值，通过哈希算法转为数组下标</li>
+<li>如果下标位置没有元素，返回null</li>
+<li>否则，拿着key与链表上的key一一比较，返回链表上对应key的value</li>
+</ol>
+<p>为什么哈希表的增删和查询的效率高？</p>
+<ol>
+<li>增删在链表上高</li>
+<li>查询只需要在部分数据上查询</li>
+</ol>
+<p>更新：JDK8之后，当某数组位置的链表长度大于8时，链表变为红黑树。当红黑树的节点数量小于6时，重新变为单向链表。</p>
+<p>hashMap的key允许为空，但只能存在一个。即：null值作为key和普通值一样。</p>
+<p>为什么要同时重写<code>hashCode</code>和<code>equals</code>方法？</p>
+<ol>
+<li>如果两个对象相等，则 <code>hashcode</code>一定也是相同的。两个对象有相同的<code>hashcode</code>值，它们不一定是相等的。（哈希碰撞）。</li>
+<li>两个对象相等,对两个对象分别调用 <code>equals</code> 方法都返回 true。因此，对于两个<code>equals</code>的对象，<code>hashCode</code>也必须相同。</li>
+<li>两个方法需要同时重写。</li>
+</ol>
+<blockquote>
+<p>hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写 hashCode()，则该 class 的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）</p>
+</blockquote>
+<h3 id="hashcode方法与equals方法的重写">
+  hashCode方法与equals方法的重写
+  <a class="anchor" href="#hashcode%e6%96%b9%e6%b3%95%e4%b8%8eequals%e6%96%b9%e6%b3%95%e7%9a%84%e9%87%8d%e5%86%99">#</a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MapTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Student</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="o">(</span><span class="s">&#34;zhangsan&#34;</span><span class="o">);</span>
+        <span class="n">Student</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="o">(</span><span class="s">&#34;zhangsan&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">s2</span><span class="o">));</span>  <span class="c1">// 重写equals方法前为false，重写后为true
+</span><span class="c1"></span>        <span class="c1">// 假如不重写hashCode方法，s1和s2的hashCode不同。（默认返回地址）
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s2</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+        
+        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span> <span class="n">students</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+        <span class="n">students</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s1</span><span class="o">);</span>
+        <span class="n">students</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">students</span><span class="o">.</span><span class="na">size</span><span class="o">());</span> 
+        <span class="cm">/*
+</span><span class="cm">        只重写equals没重写hashCode：由于HashSet会先调用hashCode方法确定哈希表上数组下标，因此s1和s2会被放入两个位置，输出2；
+</span><span class="cm">        因此，若重写equals，equals返回true，hashCode方法必须返回相同的值。
+</span><span class="cm">        
+</span><span class="cm">        */</span>
+        
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Student</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Student</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="nf">Student</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// hashCode
+</span><span class="c1"></span>    <span class="cm">/*
+</span><span class="cm">    @Override
+</span><span class="cm">	public int hashCode() {
+</span><span class="cm">        return Objects.hash(name);  // 此处将对同样name的对象返回一样的哈希值
+</span><span class="cm">    }
+</span><span class="cm">    */</span>
+    
+    <span class="c1">// equals
+</span><span class="c1"></span>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">o</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">Student</span> <span class="n">student</span> <span class="o">=</span> <span class="o">(</span><span class="n">Student</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">student</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="hashtable">
+  HashTable
+  <a class="anchor" href="#hashtable">#</a>
+</h3>
+<p><code>key</code>和<code>value</code>都不能为<code>null</code></p>
+<p>方法都带有<code>synchronized</code>，效率低。</p>
+<h3 id="properties">
+  Properties
+  <a class="anchor" href="#properties">#</a>
+</h3>
+<p>一个<code>Map</code>集合，继承<code>HashTable</code>，<code>Properties</code>的<code>key</code>和<code>value</code>都是<code>String</code>类型。</p>
+<p><code>Properties</code>被称为属性类对象。是线程安全的。</p>
+<p><code>setProperty(String key, String value)</code></p>
+<p><code>getProperty(String key)</code></p>
+<h3 id="treemap">
+  TreeMap
+  <a class="anchor" href="#treemap">#</a>
+</h3>
+<p><code>TreeSet</code>底层实际为<code>TreeMap</code>。放到<code>TreeSet</code>中的元素，等同于放到<code>TreeMap</code>的<code>key</code>部分。可以自动排序。</p>
+<p><code>TreeMap</code>集合底层是一个二叉树。</p>
+<div style="page-break-after: always;"></div>
+<h2 id="泛型">
+  泛型
+  <a class="anchor" href="#%e6%b3%9b%e5%9e%8b">#</a>
+</h2>
+<p>指定集合中的元素类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">mylist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;();</span>
+<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">mylist</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+<span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">E</span> <span class="n">ele</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span> <span class="c1">// 获得的是E，不再是Object。
+</span><span class="c1"></span><span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>泛型的好处？</p>
+<ol>
+<li>集合中存储的元素类型统一</li>
+<li>从集合中取出的元素类型是泛型指定的类型，不需要进行大量的“向下转型”</li>
+</ol>
+<p>泛型的缺点？</p>
+<p>导致集合中存储的元素缺乏多样性。</p>
+<p>JDK8之后，出现自动类型推断，称为钻石表达式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">mylist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span> <span class="c1">// 可以省略后面的类型。
+</span></code></pre></td></tr></table>
+</div>
+</div><p>自定义泛型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenericTest</span><span class="o">&lt;</span><span class="n">标识符随便写</span><span class="o">&gt;</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSome</span><span class="o">(</span><span class="n">标识符随便写</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 标志符一般为E或者T
+</span><span class="c1"></span>		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">o</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">GenericTest</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">gt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GenericTest</span><span class="o">&lt;&gt;();</span>
+		<span class="n">gt</span><span class="o">.</span><span class="na">doSome</span><span class="o">(</span><span class="n">此处只能传String</span><span class="o">)</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="http://huangbxaaa.github.io/en/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="http://huangbxaaa.github.io/ko/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        한국어
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#map">Map</a>
+      <ul>
+        <li><a href="#官方文档一些方法的解释">官方文档一些方法的解释</a></li>
+        <li><a href="#遍历">遍历</a></li>
+        <li><a href="#hashmap">HashMap</a></li>
+        <li><a href="#hashcode方法与equals方法的重写">hashCode方法与equals方法的重写</a></li>
+        <li><a href="#hashtable">HashTable</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#treemap">TreeMap</a></li>
+      </ul>
+    </li>
+    <li><a href="#泛型">泛型</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Hugo Zzo Theme</title>
+    <link>http://huangbxaaa.github.io/en/categories/</link>
+    <description>Recent content in Categories on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 20 May 2020 02:09:50 +0800</lastBuildDate>
+    
+	<atom:link href="http://huangbxaaa.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java</title>
+      <link>http://huangbxaaa.github.io/en/categories/java/</link>
+      <pubDate>Mon, 08 Jun 2020 20:58:17 +0800</pubDate>
+      
+      <guid>http://huangbxaaa.github.io/en/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>杂纪</title>
+      <link>http://huangbxaaa.github.io/en/categories/%E6%9D%82%E7%BA%AA/</link>
+      <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+      
+      <guid>http://huangbxaaa.github.io/en/categories/%E6%9D%82%E7%BA%AA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

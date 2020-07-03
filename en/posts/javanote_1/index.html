@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="JavaNote_1" />
+<meta property="og:description" content="摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangbxaaa.github.io/en/posts/javanote_1/" />
+<meta property="article:published_time" content="2020-05-20T01:31:31+08:00" />
+<meta property="article:modified_time" content="2020-05-20T01:31:31+08:00" /><meta property="og:site_name" content="Hugo Zzo Theme" />
+<title>JavaNote_1 | Hugo Zzo Theme</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.aafa5705bd561f3da11b77b6d7941927d31d043ec4a7e111cb83b38b9c246074.js" integrity="sha256-qvpXBb1WHz2hG3e215QZJ9MdBD7Ep&#43;ERy4Ozi5wkYHQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/en"><span>Hugo Zzo Theme</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>JavaNote_1</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#类和对象">类和对象</a>
+      <ul>
+        <li><a href="#一些规则">一些规则</a></li>
+        <li><a href="#package和import机制">package和import机制</a></li>
+        <li><a href="#构造方法">构造方法</a></li>
+        <li><a href="#抽象类">抽象类</a></li>
+        <li><a href="#接口类">接口类</a></li>
+        <li><a href="#类与类的关系">类与类的关系</a></li>
+        <li><a href="#访问控制权限">访问控制权限</a></li>
+      </ul>
+    </li>
+    <li><a href="#方法">方法</a>
+      <ul>
+        <li><a href="#抽象方法">抽象方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#变量">变量</a></li>
+    <li><a href="#常量">常量</a></li>
+    <li><a href="#内存与机器">内存与机器</a></li>
+    <li><a href="#修饰符">修饰符</a>
+      <ul>
+        <li><a href="#final">final</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/en/posts/javanote_1/">JavaNote_1</a>
+  </h1>
+  
+  <h5>May 20, 2020</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/en/categories/java/">Java</a>
+  </div>
+  
+
+  
+
+  
+  <div>
+    
+      <a href="/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </div>
+  
+
+
+  <p><p>摘要：类和对象; 方法; 变量; 常量; 内存与机器; 修饰符;</p>
+<h2 id="类和对象">
+  类和对象
+  <a class="anchor" href="#%e7%b1%bb%e5%92%8c%e5%af%b9%e8%b1%a1">#</a>
+</h2>
+<h3 id="一些规则">
+  一些规则
+  <a class="anchor" href="#%e4%b8%80%e4%ba%9b%e8%a7%84%e5%88%99">#</a>
+</h3>
+<p>在Java中任何有效的代码必须写到“类”中，最外层必须是一个类的定义。类体中应该是方法或者变量，不能是直接的Java语句。</p>
+<p>一个Java源文件中可以定义多个class.</p>
+<p>public的类可以没有，如果有的话，每个Java文件中只能有一个，并且类名要和文件名一致.</p>
+<p>封装的作用：保证内部结构安全；暴露简单，屏蔽复杂</p>
+<h3 id="package和import机制">
+  package和import机制
+  <a class="anchor" href="#package%e5%92%8cimport%e6%9c%ba%e5%88%b6">#</a>
+</h3>
+<p>为什么要使用package？</p>
+<p>包机制可以方便程序管理，将不同功能的类分别存放在不同的包下。</p>
+<p>package怎么用？</p>
+<p>package + 包名。如<code>package com.bjpowernode.javase</code></p>
+<p>命名规范？</p>
+<p>公司域名倒序 + 项目名 + 模块名 + 功能名</p>
+<p>如何编译和运行？</p>
+<p>类名不再是：<code>HelloWorld</code>，而是：<code>com.bjpowernode.javase.HelloWorld</code></p>
+<p>路径在：<code>com/bjpowernode/javase/HelloWorld</code></p>
+<p>编译：（生成对应文件夹）</p>
+<h3 id="构造方法">
+  构造方法
+  <a class="anchor" href="#%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95">#</a>
+</h3>
+<p>类如果不提供构造方法 会自动给予无参构造方法。假如自己写了任何构造方法（有参或者无参），编译器将不会自动添加无参构造方法。因此，要写构造方法就要把有参和无参都写了.</p>
+<p>构造方法格式: <code>public className(parameters list)</code></p>
+<p>构造方法支持重载</p>
+<h3 id="抽象类">
+  抽象类
+  <a class="anchor" href="#%e6%8a%bd%e8%b1%a1%e7%b1%bb">#</a>
+</h3>
+<p><img src="/picture/JavaNote_1-20200510155604251.png" alt="JavaNote_1-20200510155604251" /></p>
+<p>抽象类也属于引用数据类型。</p>
+<p>定义方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">[</span><span class="n">修饰符列表</span><span class="o">]</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Name</span> <span class="o">{</span>
+	<span class="n">something</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>抽象类是无法实例化的，无法创建对象的，所以抽象类是用来被继承的。</p>
+<p>抽象类有构造方法，且构造方法只能给子类使用。类的默认构造方法里会有super()，调用父类的无参构造方法。</p>
+<p>作用：</p>
+<p>配合多态，可以实现面向抽象编程，降低程序的耦合度，提高程序的扩展力。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/*
+</span><span class="cm">* Copyright: Copyright (c) 2020. Baixi Bennett. All rights reserved.
+</span><span class="cm">* Created on: 2020/4/23
+</span><span class="cm">* Author: Baixi Bennett
+</span><span class="cm">* Github: huangbxaaa
+</span><span class="cm">* Weibo: GRABShbx
+</span><span class="cm">* Gmail: huangbx666@gmail.com
+</span><span class="cm">*/</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AbstractTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Animal</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="o">();</span>
+        <span class="n">Animal</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+        <span class="n">a</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;--------------&#34;</span><span class="o">);</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+        <span class="cm">/*
+</span><span class="cm">        编译时，move方法指向的是Animal中的move方法。
+</span><span class="cm">        运行时，由于地址指向的是类Cat/Dog所在的堆内存，因此调用的是Cat/Dog的move方法
+</span><span class="cm">        */</span>
+
+
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cat moving&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Dog moving&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="接口类">
+  接口类
+  <a class="anchor" href="#%e6%8e%a5%e5%8f%a3%e7%b1%bb">#</a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">[</span><span class="n">修饰符列表</span><span class="o">]</span> <span class="kd">interface</span> <span class="nc">接口名</span> <span class="o">{</span>
+<span class="o">}</span>
+
+<span class="n">例</span><span class="err">：</span>
+<span class="kd">interface</span> <span class="nc">MyMath</span> <span class="o">{</span>
+    <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">3</span><span class="o">.</span><span class="na">14</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="nf">sum</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>接口是一种引用数据类型</li>
+<li>接口是完全抽象的</li>
+<li>接口支持多继承接口中只包括两部分：
+<ol>
+<li>常量（public static final可以省略）</li>
+<li>抽象方法（public abstract修饰符可以省略）</li>
+</ol>
+</li>
+<li>接口中所有的元素都是public</li>
+<li>抽象方法不能带有方法体</li>
+<li>有了接口就有了可插拔，扩展力很强</li>
+</ol>
+<p>类与类之间叫继承；类与接口之间叫做实现（采用implements关键字）。</p>
+<p>实现接口时，必须将接口中所有的方法全部实现。</p>
+<p>进行继承或者实现时，子类的访问权限不能比父类更低。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">MyMath</span><span class="o">{</span>
+    <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">3</span><span class="o">.</span><span class="na">14</span><span class="o">;</span>      <span class="c1">//编译器会自动加上 public static final
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nf">sum</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="nf">sub</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span> <span class="c1">//编译器会自动加上 public abstract
+</span><span class="c1"></span><span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MyMathImp</span> <span class="kd">implements</span> <span class="n">MyMath</span> <span class="o">{</span>
+    <span class="cm">/*
+</span><span class="cm">    这个方法报错：理由：正在尝试分配更低的访问权限，应该加上public
+</span><span class="cm">    int sum(int a, int b) {
+</span><span class="cm">        return a + b
+</span><span class="cm">    }
+</span><span class="cm">    */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">sum</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">sub</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同样可以配合多态，实现抽象编程。</p>
+<p>接口可以多继承。弥补了类与类之间只能单继承的缺陷。但是采用多态时，只能访问本类方法。</p>
+<p>转型的时候最好用instance of判断一下。</p>
+<p>继承和实现都存在时，extends 关键字在前，implements关键字在后。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AnimalTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Flyable</span> <span class="n">f1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NewCat</span><span class="o">(</span><span class="n">12</span><span class="o">);</span>
+        <span class="n">f1</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+        <span class="n">Flyable</span> <span class="n">f2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NewDog</span><span class="o">(</span><span class="n">13</span><span class="o">);</span>
+        <span class="n">f2</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">NewAnimal</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">NewAnimal</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">interface</span> <span class="nc">Flyable</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">NewCat</span> <span class="kd">extends</span> <span class="n">NewAnimal</span> <span class="kd">implements</span> <span class="n">Flyable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">NewCat</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">age</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;cat is flying&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">NewDog</span> <span class="kd">extends</span> <span class="n">NewAnimal</span> <span class="kd">implements</span> <span class="n">Flyable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">NewDog</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">age</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;dog is flying&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>接口相当于可插拔的。</p>
+<p>接口如何实现解耦：分离开调用者和实现者。</p>
+<p>注意：Java里面，不区分大小写。类名，接口名大小写不敏感。</p>
+<p><strong>抽象类与接口的区别：</strong></p>
+<p>抽象类是半抽象的。接口是完全抽象的。</p>
+<p>抽象类中有构造方法。接口中没有构造方法。</p>
+<p>接口和接口之间支持多继承。类和类之间只能单继承。</p>
+<p>一个类可以同时实现多个接口。一个抽象类只能继承一个类。（单继承）</p>
+<p>接口中只允许出现常量和抽象方法。</p>
+<p>以后接口使用的比抽象类多，一般抽象类使用的还是少。接口一般都是对“行为”的抽象。</p>
+<h3 id="类与类的关系">
+  类与类的关系
+  <a class="anchor" href="#%e7%b1%bb%e4%b8%8e%e7%b1%bb%e7%9a%84%e5%85%b3%e7%b3%bb">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>is a</th>
+<th>继承</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>has a</td>
+<td>关联。以“属性”形式存在</td>
+</tr>
+<tr>
+<td>use a</td>
+<td>实现。以“接口”形式存在</td>
+</tr>
+</tbody>
+</table>
+<h3 id="访问控制权限">
+  访问控制权限
+  <a class="anchor" href="#%e8%ae%bf%e9%97%ae%e6%8e%a7%e5%88%b6%e6%9d%83%e9%99%90">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>本类</th>
+<th>同包</th>
+<th>子类</th>
+<th>任意位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>默认</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<h2 id="方法">
+  方法
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95">#</a>
+</h2>
+<p>重载：方法名相同，参数不同。完成功能相似的方法。只有返回值不同不叫重载，编译器会判定为方法重复。</p>
+<p>参数传递，在栈中的基本变量进行复制，在堆中的引用变量进行地址传递.</p>
+<p>get和set方法都不带有static，都是实例方法。因为操作的都是对象的属性。</p>
+<h3 id="抽象方法">
+  抽象方法
+  <a class="anchor" href="#%e6%8a%bd%e8%b1%a1%e6%96%b9%e6%b3%95">#</a>
+</h3>
+<p>没有实现的方法，没有方法体的方法。</p>
+<p>特点：</p>
+<ol>
+<li>没有方法体，以分号结尾</li>
+<li>修饰符列表中有abstract关键字</li>
+</ol>
+<p>抽象类中可以没有抽象方法。抽象方法必须放在抽象类中。</p>
+<p>因此，子类（非抽象类）继承父类（抽象类），就必须对抽象方法进行实现/覆盖/重写。否则子类会继承父类的抽象方法而出错。</p>
+<p>判断题：没有方法体的方法都是抽象方法？（错误，Object类源码中就有很多方法没有方法体，底层调用的是C++动态链接库）</p>
+<h2 id="变量">
+  变量
+  <a class="anchor" href="#%e5%8f%98%e9%87%8f">#</a>
+</h2>
+<p>引用数据类型：所有的类，String；</p>
+<p>基本数据类型：byte，short，int，long，float，double，char，boolean</p>
+<p>类中的实例变量（非静态）必须通过实例化后才能访问，否则不存在。</p>
+<p>对象的实例变量（成员变量）会附初始值0；方法中的局部变量则不会。</p>
+<p>私有属性变量，在static函数中不能访问。</p>
+<h2 id="常量">
+  常量
+  <a class="anchor" href="#%e5%b8%b8%e9%87%8f">#</a>
+</h2>
+<p>static final修饰的称为常量，常量名全部大写，每个单词采用下划线链接。</p>
+<p>常量和静态变量都存储在方法区，并且都在类加载时初始化。</p>
+<h2 id="内存与机器">
+  内存与机器
+  <a class="anchor" href="#%e5%86%85%e5%ad%98%e4%b8%8e%e6%9c%ba%e5%99%a8">#</a>
+</h2>
+<p>编译器会自动寻找依赖文件进行编译。</p>
+<p>凡是通过new创建的对象，都存在堆中。地址付给局部变量。这种保存了地址的变量叫做引用。当一个对象没有引用指向，会自动被当做垃圾回收走</p>
+<h2 id="修饰符">
+  修饰符
+  <a class="anchor" href="#%e4%bf%ae%e9%a5%b0%e7%ac%a6">#</a>
+</h2>
+<h3 id="final">
+  final
+  <a class="anchor" href="#final">#</a>
+</h3>
+<p>final表示不可变的。final修饰的方法不能被覆盖，被重写，被继承。</p>
+<p>final修饰的变量只能赋一次值，一旦赋值不可改。</p>
+<p>final修饰的实例变量，系统不会赋给它默认值，要求程序员手动赋值，可以直接定义时赋值或者在构造方法中赋值。（不背锅）。假如没有final则会赋默认值0。</p>
+<p>final实例变量定义与初始化方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kt">double</span> <span class="n">height</span> <span class="o">=</span> <span class="n">1</span><span class="o">.</span><span class="na">9</span><span class="o">;</span>
+    <span class="c1">// 或者
+</span><span class="c1"></span>    <span class="kd">final</span> <span class="kt">double</span> <span class="n">weight</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">weight</span> <span class="o">=</span> <span class="n">80</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>final修饰的实例变量永远不会改变，并且不同的对象持有的该属性都是相同的。为了节省堆空间，将其改为静态变量，存储在方法区会更好：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kd">final</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="n">1</span><span class="o">.</span><span class="na">9</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="http://huangbxaaa.github.io/en/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="http://huangbxaaa.github.io/ko/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        한국어
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#类和对象">类和对象</a>
+      <ul>
+        <li><a href="#一些规则">一些规则</a></li>
+        <li><a href="#package和import机制">package和import机制</a></li>
+        <li><a href="#构造方法">构造方法</a></li>
+        <li><a href="#抽象类">抽象类</a></li>
+        <li><a href="#接口类">接口类</a></li>
+        <li><a href="#类与类的关系">类与类的关系</a></li>
+        <li><a href="#访问控制权限">访问控制权限</a></li>
+      </ul>
+    </li>
+    <li><a href="#方法">方法</a>
+      <ul>
+        <li><a href="#抽象方法">抽象方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#变量">变量</a></li>
+    <li><a href="#常量">常量</a></li>
+    <li><a href="#内存与机器">内存与机器</a></li>
+    <li><a href="#修饰符">修饰符</a>
+      <ul>
+        <li><a href="#final">final</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

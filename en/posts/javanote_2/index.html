@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="摘要：Object; 数组;">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="JavaNote_2" />
+<meta property="og:description" content="摘要：Object; 数组;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangbxaaa.github.io/en/posts/javanote_2/" />
+<meta property="article:published_time" content="2020-06-02T16:51:14+08:00" />
+<meta property="article:modified_time" content="2020-06-02T16:51:14+08:00" /><meta property="og:site_name" content="Hugo Zzo Theme" />
+<title>JavaNote_2 | Hugo Zzo Theme</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.aafa5705bd561f3da11b77b6d7941927d31d043ec4a7e111cb83b38b9c246074.js" integrity="sha256-qvpXBb1WHz2hG3e215QZJ9MdBD7Ep&#43;ERy4Ozi5wkYHQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/en"><span>Hugo Zzo Theme</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>JavaNote_2</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#object">Object</a>
+      <ul>
+        <li><a href="#tostring">toString()</a></li>
+        <li><a href="#equals">equals()</a></li>
+        <li><a href="#finalize">finalize()</a></li>
+        <li><a href="#hashcode">hashcode()</a></li>
+      </ul>
+    </li>
+    <li><a href="#匿名内部类">匿名内部类</a></li>
+    <li><a href="#数组">数组</a>
+      <ul>
+        <li><a href="#定义与初始化">定义与初始化</a></li>
+        <li><a href="#main方法中的参数数组args">main方法中的参数数组args</a></li>
+        <li><a href="#数组的多态">数组的多态</a></li>
+        <li><a href="#数组扩容-数组复制">数组扩容、 数组复制</a></li>
+        <li><a href="#内存情况">内存情况</a></li>
+        <li><a href="#案例数组实现栈">案例：数组实现栈</a></li>
+        <li><a href="#数组算法">数组算法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/en/posts/javanote_2/">JavaNote_2</a>
+  </h1>
+  
+  <h5>June 2, 2020</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/en/categories/java/">Java</a>
+  </div>
+  
+
+  
+
+  
+  <div>
+    
+      <a href="/en/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </div>
+  
+
+
+  <p><p>摘要：Object; 数组;</p>
+<h2 id="object">
+  Object
+  <a class="anchor" href="#object">#</a>
+</h2>
+<h3 id="tostring">
+  toString()
+  <a class="anchor" href="#tostring">#</a>
+</h3>
+<p>默认输出是：类名@地址，建议重写该方法。println引用时，会自动调用该方法。</p>
+<h3 id="equals">
+  equals()
+  <a class="anchor" href="#equals">#</a>
+</h3>
+<p>默认的equals方法采用了双等号'=='进行判断，对于基本类型可以，对于引用类型，比较的只是内存地址，因此针对不同的类需要进行重写。</p>
+<p>String类是引用数据类型。已经重写了toString方法和equals方法。java中的所有字符串字面值都作为String类的实例实现。</p>
+<p>对于引用数据类型，采用equals判断相等。对于基本数据类型，采用==。</p>
+<p>只要写到类，在你的类中都写上toString和equals。</p>
+<h3 id="finalize">
+  finalize()
+  <a class="anchor" href="#finalize">#</a>
+</h3>
+<p>执行时机：当一个java对象即将被垃圾回收机制回收前，会自动调用这个方法。类似静态代码块。静态代码块在类加载时执行，且只执行一次。</p>
+<h3 id="hashcode">
+  hashcode()
+  <a class="anchor" href="#hashcode">#</a>
+</h3>
+<p>实际上就是一个java对象的内存地址，经过哈希算法，得出的一个值。</p>
+<div style="page-break-after: always;"></div>
+<h2 id="匿名内部类">
+  匿名内部类
+  <a class="anchor" href="#%e5%8c%bf%e5%90%8d%e5%86%85%e9%83%a8%e7%b1%bb">#</a>
+</h2>
+<p>在类的内部又定义了新的类，被称为内部类。包括：静态内部类，实例内部类，局部内部类，匿名内部类。使用内部类编写的代码可读性太差，尽量别用。</p>
+<p>匿名内部类的主要功能是：可以不用显式地对接口进行实现。直接new接口并对方法进行实现即可。缺点：1. 代码乱，可读性差 2. 复用性低</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">mm</span><span class="o">.</span><span class="na">mySum</span><span class="o">(</span><span class="k">new</span> <span class="n">Compute</span><span class="o">(){</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">sum</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">},</span> <span class="n">200</span><span class="o">,</span> <span class="n">300</span><span class="o">);</span>
+
+<span class="kd">interface</span> <span class="nc">Compute</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="nf">sum</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div style="page-break-after: always;"></div>
+<h2 id="数组">
+  数组
+  <a class="anchor" href="#%e6%95%b0%e7%bb%84">#</a>
+</h2>
+<p>引用数据类型。父类是Object。</p>
+<p>可以存储基本数据类型或者引用数据类型（存储地址）。</p>
+<p>数组一旦创建，长度不可变。</p>
+<p>length属性获取数组中元素的个数。</p>
+<p>数组中元素要求类型统一。</p>
+<p>数组中每个元素的地址连续排列。并且将第一个元素的内存地址作为整个数组的地址。</p>
+<p>优点：检索效率高。why？</p>
+<ol>
+<li>每个元素的内存地址在存储上连续。</li>
+<li>每个元素类型相同，占用空间大小相同。</li>
+<li>知道第一个元素的地址，每个元素空间大小，通过下标算出偏移量，就能够推算出某个元素的地址。定位效率O(1)</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>增删难</li>
+<li>不能存储大数据量。因为难以找到一块大的连续空间。</li>
+</ol>
+<h3 id="定义与初始化">
+  定义与初始化
+  <a class="anchor" href="#%e5%ae%9a%e4%b9%89%e4%b8%8e%e5%88%9d%e5%a7%8b%e5%8c%96">#</a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 以下两种定义方式都可以
+</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">array1</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">array1</span><span class="o">[</span> <span class="o">];</span> 
+
+<span class="c1">// 初始化
+</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">array1</span> <span class="o">=</span> <span class="o">{</span><span class="n">100</span><span class="o">,</span> <span class="n">2100</span><span class="o">,</span> <span class="n">300</span><span class="o">,</span> <span class="n">55</span><span class="o">};</span>  <span class="c1">// 静态初始化方法
+</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">array2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">5</span><span class="o">];</span>            <span class="c1">// 这里的5表示元素个数，默认值0
+</span></code></pre></td></tr></table>
+</div>
+</div><p>直接作为参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/*
+</span><span class="cm">方法：printArray();
+</span><span class="cm">=========================
+</span><span class="cm">*/</span>
+<span class="n">printArray</span><span class="o">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span> <span class="o">]{</span> <span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">});</span>         <span class="c1">// 直接传入静态数组 
+</span><span class="c1"></span><span class="n">printArray</span><span class="o">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">3</span><span class="o">]);</span>                     <span class="c1">// 传入动态数组
+</span></code></pre></td></tr></table>
+</div>
+</div><p>定义二维数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span><span class="o">[][]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{{},</span> <span class="o">{},</span> <span class="o">{}};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="main方法中的参数数组args">
+  main方法中的参数数组args
+  <a class="anchor" href="#main%e6%96%b9%e6%b3%95%e4%b8%ad%e7%9a%84%e5%8f%82%e6%95%b0%e6%95%b0%e7%bb%84args">#</a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个数组是留给用户的。用户可以在控制台上输入参数，这个参数自动会被转换为<code>String[] args</code></p>
+<p>如：</p>
+<pre><code>java className param1 param2
+</code></pre><p><code>param1</code>和<code>param2</code>会自动放进<code>args</code>数组。变成：<code>{&quot;param1&quot;, &quot;param2&quot;}</code></p>
+<h3 id="数组的多态">
+  数组的多态
+  <a class="anchor" href="#%e6%95%b0%e7%bb%84%e7%9a%84%e5%a4%9a%e6%80%81">#</a>
+</h3>
+<p>父类数组可以存储子类元素。可以直接调用重写的方法。</p>
+<p>假如调用子类的特有方法，则需要进行转型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Animal</span><span class="o">[]</span> <span class="n">animals</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">[</span><span class="n">2</span><span class="o">];</span>
+        <span class="n">animals</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="o">();</span>
+        <span class="n">animals</span><span class="o">[</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bird</span><span class="o">();</span>
+        <span class="n">animals</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">move</span><span class="o">();</span>
+        <span class="n">animals</span><span class="o">[</span><span class="n">1</span><span class="o">].</span><span class="na">move</span><span class="o">();</span>
+
+
+        <span class="c1">//要调用miumiu和fly，需要进行类型转化。
+</span><span class="c1"></span>        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">animals</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">animals</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="k">instanceof</span> <span class="n">Cat</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="n">Cat</span><span class="o">)</span><span class="n">animals</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="n">c</span><span class="o">.</span><span class="na">miumiu</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">animals</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="k">instanceof</span> <span class="n">Bird</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Bird</span> <span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="n">Bird</span><span class="o">)</span><span class="n">animals</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="n">b</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Animal move....&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cat move...&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miumiu</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cat miumiu&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Bird</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Bird move...&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Bird flying&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="数组扩容-数组复制">
+  数组扩容、 数组复制
+  <a class="anchor" href="#%e6%95%b0%e7%bb%84%e6%89%a9%e5%ae%b9-%e6%95%b0%e7%bb%84%e5%a4%8d%e5%88%b6">#</a>
+</h3>
+<p>新建一个更大的数组，然后将原数组复制到新数组中。</p>
+<p>可以使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">Object</span> <span class="n">src</span><span class="o">,</span> <span class="kt">int</span> <span class="n">srcPos</span><span class="o">,</span> <span class="n">Object</span> <span class="n">dest</span><span class="o">,</span> <span class="kt">int</span> <span class="n">destPost</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">);</span> <span class="c1">//length 拷贝长度
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="内存情况">
+  内存情况
+  <a class="anchor" href="#%e5%86%85%e5%ad%98%e6%83%85%e5%86%b5">#</a>
+</h3>
+<p>存储引用数据类型时：</p>
+<p><img src="/picture/JavaNote_2-20200511101303595.png" alt="image-20200511101303595" /></p>
+<h3 id="案例数组实现栈">
+  案例：数组实现栈
+  <a class="anchor" href="#%e6%a1%88%e4%be%8b%e6%95%b0%e7%bb%84%e5%ae%9e%e7%8e%b0%e6%a0%88">#</a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyStack</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">elements</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">MyStack</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">elements</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">10</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="n">Object</span> <span class="n">element</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">length</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">elements</span><span class="o">[</span><span class="n">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">element</span><span class="o">;</span>
+            <span class="n">length</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Stack full.....&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">length</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">elements</span><span class="o">[</span><span class="n">length</span><span class="o">-</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="n">length</span><span class="o">--;</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Stack is empty....&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showStack</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">elements</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;==========&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">MyStack</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyStack</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
+        <span class="n">st</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+        <span class="n">st</span><span class="o">.</span><span class="na">showStack</span><span class="o">();</span>
+        <span class="n">st</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+        <span class="n">st</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="数组算法">
+  数组算法
+  <a class="anchor" href="#%e6%95%b0%e7%bb%84%e7%ae%97%e6%b3%95">#</a>
+</h3>
+<p><code>java.util.Arrays</code>是一个工具类，里面有sort()方法，可以排序。</p>
+<div style="page-break-after: always;"></div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="http://huangbxaaa.github.io/en/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="http://huangbxaaa.github.io/ko/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        한국어
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#object">Object</a>
+      <ul>
+        <li><a href="#tostring">toString()</a></li>
+        <li><a href="#equals">equals()</a></li>
+        <li><a href="#finalize">finalize()</a></li>
+        <li><a href="#hashcode">hashcode()</a></li>
+      </ul>
+    </li>
+    <li><a href="#匿名内部类">匿名内部类</a></li>
+    <li><a href="#数组">数组</a>
+      <ul>
+        <li><a href="#定义与初始化">定义与初始化</a></li>
+        <li><a href="#main方法中的参数数组args">main方法中的参数数组args</a></li>
+        <li><a href="#数组的多态">数组的多态</a></li>
+        <li><a href="#数组扩容-数组复制">数组扩容、 数组复制</a></li>
+        <li><a href="#内存情况">内存情况</a></li>
+        <li><a href="#案例数组实现栈">案例：数组实现栈</a></li>
+        <li><a href="#数组算法">数组算法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test on Hugo Zzo Theme</title>
+    <link>http://huangbxaaa.github.io/en/tags/test/</link>
+    <description>Recent content in test on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 19 May 2020 21:53:07 +0800</lastBuildDate>
+    
+	<atom:link href="http://huangbxaaa.github.io/en/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>配置个人网页</title>
+      <link>http://huangbxaaa.github.io/en/posts/hello-world/</link>
+      <pubDate>Tue, 19 May 2020 21:53:07 +0800</pubDate>
+      
+      <guid>http://huangbxaaa.github.io/en/posts/hello-world/</guid>
+      <description>建立个人博客 # 这是我的第一篇文章，记录一下使用hugo开设个人博客过程中参考的资料和遇到的问题。 流程 # 官方教程：这个教程将博客内容与hugo</description>
+    </item>
+    
+  </channel>
+</rss>
