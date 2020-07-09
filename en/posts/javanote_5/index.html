@@ -2032,6 +2032,116 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><p>泛型的目的：</p>
+<ol>
+<li>对类而言，声明泛型用于在类体中使用，可用于实例变量或实例方法</li>
+<li>对方法而言，泛型声明用于返回值，参数等。对于方法，必须在返回值前声明要使用的泛型标志。除非所属类中已有声明。</li>
+<li>假如类和方法同时声明泛型，那么方法的泛型会覆盖类的泛型</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+
+	<span class="c1">// Type declaration &lt;T&gt; already done at class level
+</span><span class="c1"></span>	<span class="kd">public</span> <span class="n">T</span> <span class="nf">myMethod</span><span class="o">(</span><span class="n">T</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+	<span class="o">}</span>
+
+    <span class="c1">// No ClassCastException   
+</span><span class="c1"></span>    <span class="c1">//     
+</span><span class="c1"></span>    <span class="c1">// MyClass&lt;String&gt; obj= new MyClass&lt;String&gt;();
+</span><span class="c1"></span>    <span class="c1">// obj.myMethod2(Integer.valueOf(&#34;1&#34;));
+</span><span class="c1"></span>    <span class="c1">//
+</span><span class="c1"></span>    <span class="c1">// Since type T is redefined at this method level.
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="nf">myMethod2</span><span class="o">(</span><span class="n">T</span> <span class="n">a</span><span class="o">){</span>
+        <span class="k">return</span>  <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// No ClassCastException for the below
+</span><span class="c1"></span> 	<span class="c1">//  
+</span><span class="c1"></span>    <span class="c1">// MyClass&lt;String&gt; o= new MyClass&lt;String&gt;();
+</span><span class="c1"></span>    <span class="c1">// o.myMethod3(Integer.valueOf(&#34;1&#34;).getClass())
+</span><span class="c1"></span>    <span class="c1">//
+</span><span class="c1"></span>    <span class="c1">// Since &lt;T&gt; is undefined within this method; 
+</span><span class="c1"></span>    <span class="c1">// And MyClass&lt;T&gt; don&#39;t have impact here
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="nf">myMethod3</span><span class="o">(</span><span class="n">Class</span> <span class="n">a</span><span class="o">){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// ClassCastException for o.myMethod4(Integer.valueOf(&#34;1&#34;).getClass())
+</span><span class="c1"></span>    <span class="c1">// Should be 
+</span><span class="c1"></span>    <span class="c1">// o.myMethod4(String.valueOf(&#34;1&#34;).getClass())
+</span><span class="c1"></span>    <span class="kd">private</span>  <span class="n">T</span> <span class="nf">myMethod4</span><span class="o">(</span><span class="n">Class</span> <span class="n">a</span><span class="o">){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="c1">//&lt;T&gt; is overriding the T declared at Class level;
+</span><span class="c1"></span>    <span class="c1">//So There is no ClassCastException though a is not the type of T declared at MyClass&lt;T&gt;. 
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="nf">myMethod5</span><span class="o">(</span><span class="n">Object</span> <span class="n">a</span><span class="o">){</span>
+            <span class="k">return</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">//Runtime ClassCastException will be thrown if a is not the type T (MyClass&lt;T&gt;).  
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="n">T</span> <span class="nf">myMethod6</span><span class="o">(</span><span class="n">Object</span> <span class="n">a</span><span class="o">){</span>
+            <span class="k">return</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>       
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
 </div>
     </article>
     
